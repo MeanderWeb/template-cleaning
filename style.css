@@ -1,0 +1,12 @@
+/* Cleaning — Color overrides only. All structure in _shared/ */
+@import url('css/base.css');
+@import url('css/components.css');
+
+:root {
+  --clr-primary:    #0e7490;
+  --clr-primary-dk: #0a5569;
+  --clr-accent:     #34d399;
+}
+
+/* Mint green accent: dark text for legibility */
+.btn-accent { color: var(--clr-gray-900); }
