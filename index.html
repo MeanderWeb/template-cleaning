@@ -10,7 +10,7 @@
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="[BUSINESS_NAME] | Professional Cleaning Services">
   <meta property="og:description" content="House cleaning in Cape Coral, FL. Background checked, eco-friendly products, satisfaction guaranteed.">
-  <meta property="og:url"         content="https://www.spotlesscapecoral.com">
+  <meta property="og:url"         content="[OG_URL]">
   <meta property="og:site_name"   content="[BUSINESS_NAME]">
 
   <!-- Google Fonts: Inter -->
@@ -50,7 +50,7 @@
 ═══════════════════════════════════════════ -->
 <header class="site-header">
   <div class="container header-inner">
-    <a href="#" class="logo">Spotless<span>Cleaning</span></a>
+    <a href="#" class="logo">[BUSINESS_NAME]</a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
     <nav class="nav-menu" aria-label="Main navigation">
@@ -154,7 +154,7 @@
     <div class="about-text">
       <span class="section-label">About Us</span>
       <h2 class="section-title">A Cleaner Home. A Happier Life.</h2>
-      <p>Spotless has been cleaning homes and businesses across Cape Coral since 2014. Every cleaner on our team is background-checked, trained, and takes real pride in their work. We treat your home like our own.</p>
+      <p>[BUSINESS_NAME] has been cleaning homes and businesses across Cape Coral since [YEAR_FOUNDED]. Every cleaner on our team is background-checked, trained, and takes real pride in their work. We treat your home like our own.</p>
       <p>We use eco-friendly, pet-safe cleaning products and bring all our own supplies. No hidden fees, no broken promises — just a clean home and a smile when we're done.</p>
     </div>
     <div class="about-stats">
@@ -283,11 +283,12 @@
       <a href="#" class="footer-logo">[BUSINESS_NAME]</a>
       <p class="footer-tagline">A Cleaner Home. A Happier Life.</p>
       <p>Background Checked · Eco-Friendly · Fully Insured</p>
-      <p class="license-line">License # [LICENSE_NUMBER]</p>
+      <p class="license-line"><span class="license">[LICENSE_NUMBER]</span></p>
       <div class="footer-contact">
         <a href="tel:[PHONE]">[PHONE]</a>
         <a href="mailto:[EMAIL]">[EMAIL]</a>
-        <span>[ADDRESS], [CITY], [STATE] [ZIP]</span>
+        <span class="addr-street">[ADDRESS]</span>
+          <span class="addr-city">[CITY], [STATE] [ZIP]</span>
       </div>
     </div>
     <div class="footer-nav">
@@ -315,7 +316,10 @@
       <p>Friday: 8 AM – 4 PM</p>
       <p>Saturday: 9 AM – 2 PM</p>
       <p>Sunday: Closed</p>
-      <p class="footer-address">[ADDRESS]<br>[CITY], [STATE] [ZIP]</p>
+      <p class="footer-address">
+        <span class="addr-street">[ADDRESS]</span>
+        <span class="addr-city">[CITY], [STATE] [ZIP]</span>
+      </p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -325,6 +329,20 @@
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.querySelectorAll('.license').forEach(el => {
+    if (!el.textContent.trim()) el.style.display = 'none';
+  });
+
+  document.querySelectorAll('.addr-street').forEach(el => {
+    if (!el.textContent.trim()) el.style.display = 'none';
+  });
+
+  document.querySelectorAll('.since-year').forEach(el => {
+    if (!el.textContent.trim()) el.closest('.since').remove();
+  });
+</script>
 </body>
 </html>
